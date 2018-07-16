@@ -19,8 +19,8 @@ from . import views
 
 urlpatterns = [
     path(r'^admin/$', admin.site.urls),
-    path(r'^lista-prenotazioni/$', views.listaPrenotazioni, name='listaPrenotazioni'),
+    path(r'^listaPrenotazioni/$', views.listaPrenotazioni, name='listaPrenotazioni'),
     path(r'^login/$', views.login, name='login'),
-    path(r'^dettaglio-prenotazione/$', views.dettaglioPrenotazione, name='prenotazioneDettaglio'),
+    path(r'^dettaglioPrenotazione/$', views.dettaglioPrenotazione, name='prenotazioneDettaglio'),
 
 ]
