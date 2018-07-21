@@ -1,17 +1,20 @@
 from django.shortcuts import render
 
 
-def listaPrenotazioni(request):
-    return render(request, 'listaPrenotazioni.html')
+#def listaPrenotazioni(request):
+  #  return render(request, 'listaPrenotazioni.html')
 
 
-def login(request):
-    return render(request, 'login.html')
+#def login(request):
+ #   return render(request, 'login.html')
 
 
-def dettaglioPrenotazione(request):
-    return render(request, 'dettaglioPrenotazione.html')
+#def dettaglioPrenotazione(request):
+ #   return render(request, 'dettaglioPrenotazione.html')
 
 
-def home(request):
-    return render(request, 'home.html')
+def homeAlbergatore(request):
+    context ={}
+    return render(request, 'homeAlbergatore.html', context)
+
+
