@@ -28,6 +28,7 @@ class Albergatore(Utente):
         stanza.servizi = servizi
         stanza.costo = costo
         stanza.hotelDiAppartenenza = hotel.nomehotel
+        hotel.numStanze += 1
 
 class Cliente(models.Model):
     email = models.CharField(max_length=30)
@@ -53,7 +54,7 @@ class Stanza(models.Model):
     numStanza = models.IntegerField()
     postiletto = models.IntegerField()
     servizi = models.CharField(max_length=100)
-    costo = models.DecimalField(decimal_places=2)
+    costo = models.DecimalField(max_digits=10, decimal_places=2)
     hotelDiAppartenenza = models.CharField(max_length=30)
 
 
