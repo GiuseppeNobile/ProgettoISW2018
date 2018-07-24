@@ -1,16 +1,12 @@
 from django.db import models
+from django.contrib.auth.base_user import AbstractBaseUser
 
 
-class Utente(models.Model):
-    nome = models.CharField(max_length=30)
-    cognome = models.CharField(max_length=30)
+class Albergatore(AbstractBaseUser):
     username = models.CharField(max_length=30)
-    email = models.CharField(max_length=30)
-    password = models.CharField(max_length=30)
-
-
-class Albergatore(Utente):
     numeroHotel = models.IntegerField()
+
+    USERNAME_FIELD = 'username'
 
     def aggiungiHotel(self, nome, desc, citta, ind, numstanze):
         hotel = Hotel()
@@ -60,6 +56,7 @@ class Stanza(models.Model):
 
 class Prenotazione(models.Model):
     idPrenotazione = models.IntegerField()
+    hotel = Hotel
     cliente = models.CharField(max_length=30)
     stanza = models.IntegerField()
     data = models.DateTimeField()

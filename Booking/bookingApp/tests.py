@@ -1,9 +1,9 @@
 from django.test import TestCase
-from Booking.Booking.models import *
+from .models import *
 
 
 class ModelTest(TestCase):
-    def testOggetti(self):
+    def test_Oggetti(self):
         albergatore1 = Albergatore(
             nome = "Piero",
             cognome = "Pieri",
