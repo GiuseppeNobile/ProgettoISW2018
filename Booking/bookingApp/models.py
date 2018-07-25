@@ -9,7 +9,7 @@ class Albergatore(AbstractBaseUser):
     USERNAME_FIELD = 'username'
 
     def aggiungiHotel(self, nome, desc, citta, ind, numstanze):
-        hotel = Hotel()
+        hotel = models.ForeignKey('Hotel', on_delete=models.CASCADE)
         hotel.nomehotel = nome
         hotel.deschotel = desc
         hotel.cittahotel = citta
@@ -18,7 +18,7 @@ class Albergatore(AbstractBaseUser):
         hotel.proprietario = self.cognome
 
     def aggiungiCamera(self, numero, posti, servizi, costo, hotel):
-        stanza = Stanza()
+        stanza = models.ForeignKey('Stanza', on_delete=models.CASCADE)
         stanza.numStanza = numero
         stanza.postiletto = posti
         stanza.servizi = servizi
@@ -31,7 +31,7 @@ class Cliente(models.Model):
     password = models.CharField(max_length=30)
 
     def effettuaPrenotazione(self, stanza, data):
-        prenotazione = Prenotazione()
+        prenotazione = models.ForeignKey('Prenotazione', on_delete=models.CASCADE)
         prenotazione.cliente = self.email
         prenotazione.stanza = stanza.numStanza
         prenotazione.data = data
@@ -43,7 +43,7 @@ class Hotel(models.Model):
     cittahotel = models.CharField(max_length=30)
     indhotel = models.CharField(max_length=30)
     numStanze = models.IntegerField()
-    proprietario = models.CharField(max_length=30)
+    proprietario = models.ForeignKey('Albergatore', on_delete=models.CASCADE)
 
 
 class Stanza(models.Model):
@@ -51,12 +51,11 @@ class Stanza(models.Model):
     postiletto = models.IntegerField()
     servizi = models.CharField(max_length=100)
     costo = models.DecimalField(max_digits=10, decimal_places=2)
-    hotelDiAppartenenza = models.CharField(max_length=30)
+    hotelDiAppartenenza = models.ForeignKey('Hotel', on_delete=models.CASCADE)
 
 
 class Prenotazione(models.Model):
-    idPrenotazione = models.IntegerField()
-    hotel = Hotel
-    cliente = models.CharField(max_length=30)
-    stanza = models.IntegerField()
+    hotel = models.ForeignKey('Hotel', on_delete=models.CASCADE)
+    cliente = models.ForeignKey('Cliente', on_delete=models.CASCADE)
+    stanza = models.ForeignKey('Stanza', on_delete=models.CASCADE)
     data = models.DateTimeField()

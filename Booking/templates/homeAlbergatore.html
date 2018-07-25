@@ -1,25 +1,29 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Albergatore - Home</title>
-</head>
-<body>
-    <header>
-        <button class="button">Lista Hotel</button>
-        <button class="button">Logout</button>
-    </header>
-    <h1>Benvenuto nella tua homepage!</h1>
-    <h2>Qui puoi vedere la lista delle prenotazioni nei tuoi alberghi</h2>
+    <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/booking.css' %}">
+        <meta charset="UTF-8">
+        <title>Albergatore - Home</title>
+    </head>
+    <body>
+        <header>
+            <button class="button">Lista Hotel</button>
+            <button class="button">Logout</button>
+        </header>
+        <h1>Benvenuto nella tua homepage!</h1>
+        <h2>Qui puoi vedere la lista delle prenotazioni nei tuoi alberghi</h2>
 
+        {% for prenotazione in Prenotazione %}
+        <div id="tabellaPrenotazioni">
+            <table>
+                <tr><td>Hotel</td><td>Camera</td><td>Cliente</td></tr>
+                <tr><td>1</td><td>2</td><td>3</td></tr>
+            </table>
+        </div>
+        {% endfor %}
 
-    <div id="tabellaPrenotazioni">
-        <table>
-            <tr><td>Hotel</td><td>Camera</td><td>Cliente</td></tr>
-            <tr><td>1</td><td>2</td><td>3</td></tr>
-        </table>
-    </div>
-
-
-</body>
+    </body>
 </html>
