@@ -8,6 +8,9 @@ class Albergatore(AbstractBaseUser):
 
     USERNAME_FIELD = 'username'
 
+    def __str__(self):
+        return self.username
+
     def aggiungiHotel(self, nome, desc, citta, ind, numstanze):
         hotel = models.ForeignKey('Hotel', on_delete=models.CASCADE)
         hotel.nomehotel = nome
@@ -26,6 +29,7 @@ class Albergatore(AbstractBaseUser):
         stanza.hotelDiAppartenenza = hotel.nomehotel
         hotel.numStanze += 1
 
+
 class Cliente(models.Model):
     email = models.CharField(max_length=30)
     password = models.CharField(max_length=30)
@@ -36,6 +40,9 @@ class Cliente(models.Model):
         prenotazione.stanza = stanza.numStanza
         prenotazione.data = data
 
+    def __str__(self):
+        return self.email
+
 
 class Hotel(models.Model):
     nomehotel = models.CharField(max_length=30)
@@ -45,6 +52,9 @@ class Hotel(models.Model):
     numStanze = models.IntegerField()
     proprietario = models.ForeignKey('Albergatore', on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.nomehotel
+
 
 class Stanza(models.Model):
     numStanza = models.IntegerField()
@@ -53,9 +63,16 @@ class Stanza(models.Model):
     costo = models.DecimalField(max_digits=10, decimal_places=2)
     hotelDiAppartenenza = models.ForeignKey('Hotel', on_delete=models.CASCADE)
 
+    def __str__(self):
+        return '{}'.format(self.numStanza)
+
+
 
 class Prenotazione(models.Model):
     hotel = models.ForeignKey('Hotel', on_delete=models.CASCADE)
     cliente = models.ForeignKey('Cliente', on_delete=models.CASCADE)
     stanza = models.ForeignKey('Stanza', on_delete=models.CASCADE)
     data = models.DateTimeField()
+
+    def __str__(self):
+        return '{}'.format(self.id)

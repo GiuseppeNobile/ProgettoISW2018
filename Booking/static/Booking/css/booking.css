@@ -1,0 +1,32 @@
+header{
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    border: 15px;
+    padding-left: 0px;
+}
+
+body {
+    padding-left: 15px;
+}
+
+.tabella{
+       width: 60%;
+       border: 5px #17a2b8;
+       background-color: white;
+       color: black;
+       text-align: center;
+       font-family: "arial", sans-serif;
+       font-weight: bold;
+     }
+table.center{
+             margin-left: auto;
+             margin-right: auto;
+            }
+th{
+    height: 20px;
+    background-color: green;
+    color: whitesmoke;
+  }
+tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                   }
