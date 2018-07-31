@@ -1,32 +1,95 @@
 header{
+    width: 100%;
+    height: 60px;
     background-color: #17a2b8;
     border-color: #17a2b8;
-    border: 15px;
-    padding-left: 0px;
+    border: 40px;
+    padding: 5px;
+
+}
+
+.titolo{
+    color: whitesmoke;
+}
+
+h1{
+    padding-left: 15px;
+
+}
+
+h2{
+    padding-left: 15px;
+    text-align: center;
 }
 
 body {
-    padding-left: 15px;
+
 }
 
-.tabella{
+/*Stile tabelle*/
+table{
        width: 60%;
-       border: 5px #17a2b8;
+       border: 1px #ddd;
+       border-style: solid;
        background-color: white;
        color: black;
        text-align: center;
        font-family: "arial", sans-serif;
        font-weight: bold;
-     }
+       margin: 0 auto;
+
+}
 table.center{
              margin-left: auto;
              margin-right: auto;
-            }
+}
 th{
     height: 20px;
-    background-color: green;
+    background-color: #17a2b8;
     color: whitesmoke;
-  }
+    border: 1px solid #ddd;
+    padding 8px;
+}
 tr:nth-child(even) {
                     background-color: #f2f2f2;
-                   }
+}
+
+td{
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+/*stile bottoni*/
+button{
+    background-color: #117585;
+    color: whitesmoke;
+    padding: 5px;
+    border: 2px solid #53B4C4;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #53B4C4;
+}
+
+button:active {
+    background-color: #53B4C4;
+    transform: translateY(3px);
+}
+
+
+#left-header {
+  float: left;
+}
+
+#right-header {
+  float: right;
+}
+
+.headerButtons{
+    margin-left: 3px;
+    margin-right: 3px;
+    position: relative;
+
+}

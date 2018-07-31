@@ -2,24 +2,29 @@
 {% load staticfiles %}
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'booking/css/booking.css' %}">
         <meta charset="UTF-8">
         <title>Albergatore - Home</title>
     </head>
     <body>
         <header>
-            <button class="button">Lista Hotel</button>
-            <button class="button">Logout</button>
-        </header>
+            <div id="left-header">
+                <h1 class="titolo"> Home Albergatore </h1>
+            </div>
+            <div id="right-header">
+                <button class="headerButton">Lista Hotel</button>
+                <button class="headerButton">Logout</button>
+            </div>
+            </header>
         <h1>Benvenuto nella tua homepage!</h1>
         <h2>Qui puoi vedere la lista delle prenotazioni nei tuoi alberghi</h2>
 
 
         <div class="tabella">
             <table>
-                <tr><td>Numero prenotazione</td><td>Hotel</td><td>Camera</td><td>Cliente</td></tr>
+                <tr><th>Numero prenotazione</th><th>Hotel</th><th>Camera</th><th>Cliente</th></tr>
                 {% for object in object_list %}
                 <tr><td>{{object.id}}</td><td>{{object.hotel}}</td><td>{{object.stanza}}</td><td>{{object.cliente}}</td></tr>
                 {% endfor %}
