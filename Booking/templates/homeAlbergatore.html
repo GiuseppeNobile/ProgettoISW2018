@@ -22,15 +22,13 @@
         <h2>Qui puoi vedere la lista delle prenotazioni nei tuoi alberghi</h2>
 
 
-        <div class="tabella">
+        <div id="tabellaAlbergatore">
             <table>
                 <tr><th>Numero prenotazione</th><th>Hotel</th><th>Camera</th><th>Cliente</th></tr>
-                {% for object in object_list %}
-                <tr><td>{{object.id}}</td><td>{{object.hotel}}</td><td>{{object.stanza}}</td><td>{{object.cliente}}</td></tr>
+                {% for prenotazione in prenotazioni %}
+                <tr><td>{{prenotazione.id}}</td><td>{{prenotazione.hotel}}</td><td>{{prenotazione.stanza}}</td><td>{{prenotazione.cliente}}</td></tr>
                 {% endfor %}
             </table>
         </div>
-
-
     </body>
 </html>

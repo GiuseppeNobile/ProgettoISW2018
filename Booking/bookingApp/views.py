@@ -2,20 +2,17 @@ from django.shortcuts import render
 from .models import *
 
 
-#def listaPrenotazioni(request):
-  #  return render(request, 'listaPrenotazioni.html')
 
-
-#def login(request):
- #   return render(request, 'login.html')
-
-
-#def dettaglioPrenotazione(request):
- #   return render(request, 'dettaglioPrenotazione.html')
+def hotels(request):
+    alberghi = Hotel.objects.all().order_by('nomehotel')
+    return render(request, 'hotels.html', {'alberghi': alberghi})
 
 
 def homeAlbergatore(request):
-    context ={}
-    return render(request, 'homeAlbergatore.html', context)
+    prenotazioni = Prenotazione.objects.all().order_by('data')
+    return render(request, 'homeAlbergatore.html', {'prenotazioni': prenotazioni})
 
+def search(request):
+    context={}
+    return render(request, 'search.html', {})
 

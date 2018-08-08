@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'booking/css/booking.css' %}">
+        <meta charset="UTF-8">
+        <title>Lista Hotel</title>
+    </head>
+    <body>
+        <header>
+                <div id="left-header">
+                    <h1 class="titolo">Ricerca</h1>
+                </div>
+                <div id="right-header">
+                    <button class="headerButton">Aggiungi Hotel</button>
+                    <button class="headerButton">Logout</button>
+                </div>
+        </header>
+
+        <div class="bottoniHotel">
+            {% for hotel in alberghi %}
+            <button class="bodyButton">{{hotel.nomehotel}}</button>
+            {% endfor %}
+        </div>
+    </body>
+</html>

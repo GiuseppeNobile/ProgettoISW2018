@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'booking/css/booking.css' %}">
+        <meta charset="UTF-8">
+        <title>Ricerca</title>
+    </head>
+    <body>
+        <header>
+            <div id="left-header">
+                <h1 class="titolo">Ricerca</h1>
+            </div>
+            <div id="right-header">
+                <button class="headerButton">Logout</button>
+            </div>
+        </header>
+
+        <h1>Qui puoi cercare le stanze e gli alberghi!</h1>
+
+        <div class="searchBar">
+            <form>
+                Città:
+                <input type="text" name="città">
+                Numero Persone:
+                <input type="number" name="numero persone">
+                Da:
+                <input type="date" name>
+                A:
+                <input type="date" name>
+
+                <input type="submit" value="Cerca">
+            </form>
+        </div>
+
+        <h3 id="h3Risultati">Risultati: </h3>
+
+    </body>
+</html>

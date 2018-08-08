@@ -20,8 +20,7 @@ from . import views
 from django.views.generic import ListView, DetailView
 
 urlpatterns = [
-    path('homeAlbergatore/', views.homeAlbergatore),
-    path('', ListView.as_view(queryset=Prenotazione.objects.all().order_by('data'),
-                              template_name='homeAlbergatore.html'),
-         name='listaPrenotazioni')
+    path('homeAlbergatore/', views.homeAlbergatore, name='homeAlbergatore.html'),
+    path('hotels/', views.hotels, name='hotels.html'),
+    path('search/', views.search, name='search.html'),
 ]

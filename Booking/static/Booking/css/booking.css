@@ -5,7 +5,6 @@ header{
     border-color: #17a2b8;
     border: 40px;
     padding: 5px;
-
 }
 
 .titolo{
@@ -17,9 +16,13 @@ h1{
 
 }
 
-h2{
+h2,{
     padding-left: 15px;
     text-align: center;
+}
+
+#h3Risultati{
+    padding-left: 15px;
 }
 
 body {
@@ -43,6 +46,10 @@ table.center{
              margin-left: auto;
              margin-right: auto;
 }
+
+#tabellaAlbergatore{
+    margin-top: 40px;
+}
 th{
     height: 20px;
     background-color: #17a2b8;
@@ -51,7 +58,7 @@ th{
     padding 8px;
 }
 tr:nth-child(even) {
-                    background-color: #f2f2f2;
+    background-color: #f2f2f2;
 }
 
 td{
@@ -68,6 +75,21 @@ button{
     border-radius: 8px;
     font-weight: bold;
 }
+
+.bottoniHotel{
+    margin: 30px auto;
+    width: 450px;
+    background: #f2f2f2;
+    overflow-y: auto;
+}
+
+.bodyButton{
+    display: inline-block;
+    width: 100px;
+    height: 80px;
+    margin: 20px;
+}
+
 
 button:hover {
     background-color: #53B4C4;
@@ -92,4 +114,69 @@ button:active {
     margin-right: 3px;
     position: relative;
 
+}
+
+/* stile form */
+
+form{
+    font-family: inherit;
+    font-weight: bold;
+    margin: auto 20px;
+}
+
+input{
+    margin-right: 5px;
+}
+
+input [type=button], input[type=submit]{
+    background-color: #117585;
+    color: whitesmoke;
+    padding: 5px;
+    border: 2px solid #53B4C4;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+input[type=text]{
+    padding: 0px 15px;
+    margin: 8px 5px;
+    box-sizing: border-box;
+}
+
+input[type=email] {
+    padding: 0px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type=username], input[type=url] {
+    padding: 0px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type=password] {
+    padding: 0px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+input [type=number]{
+    padding: 0px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input [type=date]{
+    padding: 0px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+/* stile searchbar */
+.searchBar{
+    margin: 30px auto;
+    width: 100%;
+    border: 2px solid #f2f2f2;
+    background: #f2f2f2;
+    overflow-y: auto;
 }
